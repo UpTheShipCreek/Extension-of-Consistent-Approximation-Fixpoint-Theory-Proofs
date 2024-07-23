@@ -34,9 +34,9 @@ def A₁Monotone : Monotone (A₁Partial interlub A conA ab) :=
   λ ⟨d1, od1⟩  ⟨d2, od2⟩ hle =>
     have les_inf : ⟨d1, b⟩ ≲ ⟨d2, b⟩ := by
       apply And.intro
-      .
+      ·
         exact hle
-      .
+      ·
         rfl
     (conA ⟨(d1,b), od1.2⟩ ⟨(d2,b), od2.2⟩ les_inf).1
 
@@ -46,9 +46,9 @@ def A₂Monotone : Monotone (A₂Partial interglb A conA ab) :=
   λ ⟨d1, od1⟩ ⟨d2, od2⟩ hle =>
     have les_inf : ⟨a, d2⟩ ≲ ⟨a, d1⟩ := by
       apply And.intro
-      .
+      ·
         rfl
-      .
+      ·
         exact hle
     (conA ⟨(a, d2), od2.1⟩ ⟨(a, d1), od1.1⟩ les_inf).2
 

@@ -77,9 +77,9 @@ ab.1.1.1.val ≤ (rOa interglb A conA ab) ∧
   -- (a*, b) ≲ (a*, a↑)
   have p9 : (aₛ, b) ≲ (aₛ, ↑aᵤ) := by
       apply And.intro
-      .
+      ·
         rfl
-      .
+      ·
         exact p3
 
   -- A (a*, b) ≲ A (a*, a↑)
@@ -89,9 +89,9 @@ ab.1.1.1.val ≤ (rOa interglb A conA ab) ∧
   -- (a, a↑) ≲ (a*, a↑)
   have p11 : (a, aᵤ) ≲ (aₛ, aᵤ) := by
       apply And.intro
-      .
+      ·
         apply p6
-      .
+      ·
         rfl
 
   -- A (a, a↑) ≲ A (a*, a↑)

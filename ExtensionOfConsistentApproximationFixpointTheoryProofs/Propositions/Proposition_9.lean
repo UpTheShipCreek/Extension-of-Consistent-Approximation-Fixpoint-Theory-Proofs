@@ -35,9 +35,9 @@ def Proposition_9_A : ∀ x : {x // (boundedSubtype _ _ _ D1 L1.bot ab.1.1.2) x}
   have p3 : ∀ x : {x : Subtype D1 // x ≤ b.val}, (x.val, b) ≲ (aₛ, b) := by
     intro x
     apply And.intro
-    .
+    ·
       exact L1.le_sSup {x | x ≤ b.val} x x.prop
-    .
+    ·
       rfl
 
   -- ∀ x ∈ {x | x ≤ b}, A (x, b) ≲ A (a*, b)
@@ -88,9 +88,9 @@ def Proposition_9_B : ∀ x : {x // (boundedSubtype _ _ _ D2 ab.1.1.1 L2.top) x}
   have s3 : ∀ x : {x : Subtype D2 // a.val ≤ x}, (a, x.val) ≲ (a, bₛ) := by
     intro x
     apply And.intro
-    .
+    ·
       rfl
-    .
+    ·
       exact L2.sInf_le {x | a.val ≤ x} x x.prop
 
   -- ∀ x ∈ {x | a ≤ x}, A (a, x) ≲ A (a, b*)

@@ -34,7 +34,7 @@ L1.sSup {(chain i).val.1 | i < limitOrdinal} ≤ (L2.sInf {(chain i).val.2 | i <
   have p1 : ∀ u : Ordinal, ∀ κ : Ordinal, (chain κ).val.1 ≤ (chain u).val.2.val := by
     intro u κ
     apply (OrdClassical u κ).elim
-    .
+    ·
       intro h
       have h' : (u : Ordinal) ≤ (κ : Ordinal) := by
         aesop
@@ -45,7 +45,7 @@ L1.sSup {(chain i).val.1 | i < limitOrdinal} ≤ (L2.sInf {(chain i).val.2 | i <
       have t3 : (chain κ).val.2.val ≤ (chain u).val.2 :=
         t2.2
       exact O.le_trans (chain κ).val.1 (chain κ).val.2.val (chain u).val.2 t1 t3
-    .
+    ·
       intro h
       have h' : (u : Ordinal) > (κ : Ordinal) := by
         aesop
@@ -87,23 +87,23 @@ def Proposition_12_B : ChainCompletePartialOrder {x : Subtype D1 × Subtype D2 |
   cSup := λ c => ⟨(L1.sSup {(c i).val.1 | i < limitOrdinal}, L2.sInf {(c i).val.2 | i < limitOrdinal}), Proposition_12_A interlub interglb limitOrdinal c⟩
   le_cSup := λ c i => by
     apply And.intro
-    .
+    ·
       have a_in : (c i).val.1 ∈ {(c i).val.1 | i < limitOrdinal} := by
         aesop
       exact L1.le_sSup {(c i).val.1 | i < limitOrdinal} (c i).val.1 a_in
-    .
+    ·
       have b_in : (c i).val.2 ∈ {(c i).val.2 | i < limitOrdinal} := by
         aesop
       exact L2.sInf_le {(c i).val.2 | i < limitOrdinal} (c i).val.2 b_in
 
   cSup_le := λ c x h => by
     apply And.intro
-    .
+    ·
       have h1 : ∀ b ∈ {x | ∃ i < limitOrdinal, (c i).val.1 = x}, b ≤ x.val.1 := by
         exact λ b ⟨i, ⟨le_limit, ci_eq_b⟩⟩ => ci_eq_b ▸ (λ j => (h j).1) ⟨i, le_limit⟩
 
       exact L1.sSup_le {(c i).val.1 | i < limitOrdinal} x.val.1 h1
-    .
+    ·
       have h2 : ∀ b ∈ {x | ∃ i < limitOrdinal, (c i).val.2 = x}, x.val.2 ≤ b := by
         exact λ b ⟨i, ⟨le_limit, ci_eq_b⟩⟩ => ci_eq_b ▸ (λ j => (h j).2) ⟨i, le_limit⟩
       exact L2.le_sInf {(c i).val.2 | i < limitOrdinal} x.val.2 h2

@@ -18,9 +18,9 @@ variable
 def sSupBoundedIsInBounds_L1 (S : Set (Subtype (boundedSubtype _ _ _ D1 L1.bot b))) :
 (boundedSubtype _ _ _ D1 L1.bot b) (L1.sSup (Subtype.val '' S)) := by
   apply And.intro
-  .
+  ·
     apply L1.bot_le
-  .
+  ·
     exact interlub.2.2 b b.property (Subtype.val '' S) (λ x ⟨x', ⟨_, x'eqx⟩⟩ => x'eqx ▸ x'.prop.2)
 
 instance CompleteSemilatticeSupBoundedSubtype_L1 : CompleteSemilatticeSup ({x // (boundedSubtype _ _ _ D1 L1.bot b) x}) :=
@@ -43,9 +43,9 @@ def Proposition_8_A : (CompleteLattice {x // (boundedSubtype _ _ _ D1 L1.bot b) 
 
 def sInfBoundedIsInBounds_L2 (S : Set (Subtype (boundedSubtype _ _ _ D2 a L2.top))) : (boundedSubtype _ _ _ D2 a L2.top) (L2.sInf (Subtype.val '' S)) := by
   apply And.intro
-  .
+  ·
     exact interglb.2.2 a a.prop (Subtype.val '' S) (λ x ⟨x', ⟨_, x'eqx⟩⟩ => x'eqx ▸ x'.prop.1)
-  .
+  ·
     apply L2.le_top
 
 instance CompleteSemilatticeInfBoundedSubtype_L2 : CompleteSemilatticeInf ({x // (boundedSubtype _ _ _ D2 a L2.top) x}) :=

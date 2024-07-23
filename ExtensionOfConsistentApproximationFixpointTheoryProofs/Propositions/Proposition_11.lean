@@ -46,9 +46,9 @@ reliable A ⟨((rOb interlub A conA ab).val, (rOa interglb A conA ab).val), (Pro
   -- (b↓, b) ≲ (b↓, a↑)
   have p2 : (bᵥ.val, b) ≲ (bᵥ, aᵤ) := by
     apply And.intro
-    .
+    ·
       rfl
-    .
+    ·
       exact P10.2.2.1
 
   -- A (b↓, b) ≲ A (b↓, a↑)
@@ -72,9 +72,9 @@ reliable A ⟨((rOb interlub A conA ab).val, (rOa interglb A conA ab).val), (Pro
   -- (a, a↑) ≲ (b↓, a↑)
   have p6 : (a, aᵤ) ≲ (bᵥ, aᵤ) := by
     apply And.intro
-    .
+    ·
       exact ab.prop
-    .
+    ·
       rfl
 
   -- A(a, a↑) ≲ A(b↓, a↑)
@@ -129,9 +129,9 @@ def Proposition_11_B : prudent interlub A conA ⟨⟨(rOb interlub A conA ab, (r
   have p13 : ∀ x ∈ {x | (boundedSubtype D D1 D2 D1 ⊥ ↑aᵤ) x}, (x, b) ≲ (x, aᵤ) := by
     intro x _
     apply And.intro
-    .
+    ·
       rfl
-    .
+    ·
       exact P10.2.2.1
 
   -- ∀ x ∈ [⊥, a↑], x ≤ b

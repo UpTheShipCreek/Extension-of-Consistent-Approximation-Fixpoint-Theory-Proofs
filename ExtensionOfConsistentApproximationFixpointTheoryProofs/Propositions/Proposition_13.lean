@@ -91,9 +91,9 @@ prudent interlub A conA
   have p11 : ∀ (i : {x | x < limitOrdinal}), ∀ a ∈ {x | boundedSubtype D D1 D2 D1 ⊥ bₗₛ x}, (a, (chain i).val.2) ≲ (a, bₗₛ) := by
     intro i a _
     apply And.intro
-    .
+    ·
       rfl
-    .
+    ·
       exact (cCompletePoset.le_cSup chain i).2
 
   -- A (x, bᵢ) ≲ A (x, bₗₛ)
