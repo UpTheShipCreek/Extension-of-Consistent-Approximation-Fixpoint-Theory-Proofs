@@ -1,5 +1,5 @@
-import ThesisProofs.Imports.Defs
-import ThesisProofs.Imports.Ordered_Product
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Defs
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Ordered_Product
 
 instance {D : Type u} (D1 D2 : D → Prop) [PartialOrder D] : LT (Subtype D1 × Subtype D2) :=
 { lt := λ d d' => (d.1 < d'.1 ∧ d'.2 ≤ d.2) ∨ (d.1 ≤ d'.1 ∧ d'.2 < d.2) }

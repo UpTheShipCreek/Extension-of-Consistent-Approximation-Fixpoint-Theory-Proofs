@@ -1,6 +1,6 @@
-import ThesisProofs.Imports.Defs
-import ThesisProofs.Imports.Ordered_Product
-import ThesisProofs.Imports.Info_Ordering
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Defs
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Ordered_Product
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Info_Ordering
 
 def reliable
   {D : Type u} {D1 D2 : D → Prop} [PartialOrder D] [BoundedPartialOrder D]

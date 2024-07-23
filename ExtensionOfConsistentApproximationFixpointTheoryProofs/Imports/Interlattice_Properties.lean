@@ -1,4 +1,4 @@
-import ThesisProofs.Imports.Defs
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Defs
 
 def subtypesCreateType (D : Type u) (D1 D2 : D → Prop) [Nonempty (Subtype D1)] [Nonempty (Subtype D2)] : Prop :=
   ∀ (d : D), D1 d ∨ D2 d

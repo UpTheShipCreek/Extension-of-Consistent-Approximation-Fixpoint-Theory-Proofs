@@ -1,6 +1,6 @@
-import ThesisProofs.Imports.Defs
-import ThesisProofs.Imports.Interlattice_Properties
-import ThesisProofs.Imports.Bounded_Subtype
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Defs
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Interlattice_Properties
+import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Bounded_Subtype
 
 variable
   {D : Type u}
