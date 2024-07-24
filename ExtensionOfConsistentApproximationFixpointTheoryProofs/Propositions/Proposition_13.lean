@@ -53,10 +53,6 @@ def Proposition_13_A : reliable A ((Proposition_12_B interlub interglb limitOrdi
 
   exact p5
 
-
--- ((Proposition_12_B interlub interglb limitOrdinal isLimit).cSup chain).val.1, ((Proposition_12_B interlub interglb limitOrdinal isLimit).cSup chain).val.2
---
-
 def Proposition_13_B
 (prudent_chain : ∀ (i : {x | x < limitOrdinal}), prudent interlub A conA ⟨chain i, A_reliable limitOrdinal i⟩) :
 prudent interlub A conA

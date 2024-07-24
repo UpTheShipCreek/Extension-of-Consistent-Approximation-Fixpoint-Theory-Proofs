@@ -21,4 +21,4 @@ variable
 -- An A-reliable approximation (a, b) is A-prudent if a ≤ b↓.
 def prudent : Prop :=
   let a := ab.1.1.1
-  ↑a ≤ (rOb interlub A conA ab).val
+  a.val ≤ rOb interlub A conA ab

@@ -36,7 +36,7 @@ instance CompleteSemilatticeSupBoundedSubtype_L1 : CompleteSemilatticeSup ({x //
     sSup_le := λ s x ub => L1.sSup_le (Subtype.val '' s) x (λ _ ⟨x, x_in_s, x_eq_b⟩ => x_eq_b ▸ ub x x_in_s)
   }
 
-def Proposition_8_A : (CompleteLattice {x // (boundedSubtype _ _ _ D1 L1.bot b) x}) :=
+def Proposition_8_A : CompleteLattice {x // (boundedSubtype _ _ _ D1 L1.bot b) x} :=
   @completeLatticeOfCompleteSemilatticeSup
   {x // (boundedSubtype _ _ _ D1 L1.bot b) x}
   (CompleteSemilatticeSupBoundedSubtype_L1 b interlub)
@@ -61,7 +61,7 @@ instance CompleteSemilatticeInfBoundedSubtype_L2 : CompleteSemilatticeInf ({x //
     le_sInf := λ s x ub => L2.le_sInf (Subtype.val '' s) x (λ _ ⟨x, x_in_s, x_eq_b⟩ => x_eq_b ▸ ub x x_in_s)
   }
 
-def Proposition_8_B : (CompleteLattice {x // (boundedSubtype _ _ _ D2 a L2.top) x}) :=
+def Proposition_8_B : CompleteLattice {x // (boundedSubtype _ _ _ D2 a L2.top) x} :=
   @completeLatticeOfCompleteSemilatticeInf
   {x // (boundedSubtype _ _ _ D2 a L2.top) x}
   (CompleteSemilatticeInfBoundedSubtype_L2 a interglb)
