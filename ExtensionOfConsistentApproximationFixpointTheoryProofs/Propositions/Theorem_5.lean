@@ -43,11 +43,15 @@ def L1bot_le_L2top : L1.bot ≤ L2.top.val :=
   have Lbot_le_Ltop : L.bot ≤ L.top := L.bot_le L.top
   L1bot_eq_Lbot ▸ L2top_eq_Ltop▸ Lbot_le_Ltop
 
+variable
+  (leastReliable : reliable A ⟨(L1.bot, L2.top), L1bot_le_L2top interlub⟩)
+  (leastPrudent : prudent interlub A conA ⟨⟨(L1.bot, L2.top), L1bot_le_L2top interlub⟩, leastReliable⟩)
+
 noncomputable section
 
 def Theorem_5_sequence (o : Ordinal) : {x // prudent interlub A conA x} :=
   Ordinal.limitRecOn
     o
-    ⟨⟨⟨(L1.bot, L2.top), L1bot_le_L2top interlub⟩, sorry⟩, sorry⟩
-    (λ sucOrdinal s => C_A interlub interglb A conA s)
+    ⟨⟨⟨(L1.bot, L2.top), L1bot_le_L2top interlub⟩, leastReliable⟩, leastPrudent⟩
+    (λ _ s => C_A interlub interglb A conA s)
     (λ limitOrdinal isLimit _ => ⟨⟨(Proposition_12_B interlub interglb limitOrdinal isLimit).cSup chain, Proposition_13_A interlub interglb limitOrdinal isLimit chain A conA A_reliable⟩, Proposition_13_B interlub interglb limitOrdinal isLimit chain A conA A_reliable (prudent_chain limitOrdinal)⟩)

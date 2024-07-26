@@ -3,7 +3,7 @@ import ExtensionOfConsistentApproximationFixpointTheoryProofs.Imports.Defs
 def subtypesCreateType (D : Type u) (D1 D2 : D → Prop) [Nonempty (Subtype D1)] [Nonempty (Subtype D2)] : Prop :=
   ∀ (d : D), D1 d ∨ D2 d
 
-def subtypesContainTopBot (D : Type u) (D1 D2 : D → Prop) [Nonempty {x // D1 x}] [Nonempty {x // D2 x}] [PartialOrder D] [L : BoundedPartialOrder D]  : Prop :=
+def subtypesContainTopBot (D : Type u) (D1 D2 : D → Prop) [Nonempty {x // D1 x}] [Nonempty {x // D2 x}] [PartialOrder D] [L : BoundedPartialOrder D] : Prop :=
   D1 L.top ∧ D1 L.bot ∧ D2 L.top ∧ D2 L.bot
 
 def interlattice_lub (D : Type u) (D1 D2 : D → Prop) [Nonempty {x // D1 x}] [Nonempty {x // D2 x}] [PartialOrder D] [BoundedPartialOrder D]  [L1 :(CompleteLatticeFromOrder (Subtype D1))] : Prop :=
